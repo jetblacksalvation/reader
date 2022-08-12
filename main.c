@@ -7,21 +7,24 @@ FILE* ptr;
 char temp_c;
 
 
-
 int main(){
 
-    vector* my_vector;
+    str_vector* my_vector;
 
 	char arr[] = {"hell"};
-	
-	my_vector = construct1(4, arr);
+	//test shti
+	my_vector = construct(4, arr);
 	pushback(my_vector, 'o');
 	printf("%c\n", my_vector->heap_array[3]);
 	printf("%c\n", my_vector->heap_array[4]);
     printf("%s\n",my_vector->heap_array);
     deconstruct(my_vector);
 
-    scanf("%i");
+    scanf("%i");//pauses program
+
+
+
+
     ptr = fopen("file.txt", "r");//second is mode 
     if (ptr == NULL){
         printf("error!");
