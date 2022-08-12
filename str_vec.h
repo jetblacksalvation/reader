@@ -30,7 +30,7 @@ size_t index_size(str_vector* vec){//returns the size of the string array
 }
 
 void str_pushbackk(str_vector* vec1 , str_vector* vec2){
-	if(vec1->max_size-10 < vec2){
+	if(vec1->max_size-10 < vec2->size){
 		//get the size of vec2 and multiply by 2 
 		//than do resize of the current size plus this 
 		vec1->heap_array = (char*)realloc(vec1->heap_array, (vec1->size +=vec2->size)*2*sizeof(char));
