@@ -10,44 +10,29 @@ char temp_c;
 int main(){
 
     str_vector* my_vector;
-
-    
-	char arr[] = {"hell"};
 	//test shti
-	my_vector = construct(0, "fdas");
+	my_vector = construct(0, "this value doesnt really matter biiitch ");
     pushback(my_vector, 'd');
-	printf("%s", my_vector->heap_array);
-    
-    deconstruct(my_vector);
-
-    scanf("%i");//pauses program
-
-
-
 
     ptr = fopen("file.txt", "r");//second is mode, r is reead 
     if (ptr == NULL){
         printf("error!");
         exit(0);//close program because error
     }
-    
+    char arr[7];
+    int count;
     while (!feof(ptr)) {
-        if(temp_c == -1
-        ){
-            printf("temp c is null");
-        }    
-        else{
-            temp_c = fgetc(ptr);
-            printf("char is %c \n", temp_c); 
-        }
-        
-        
-
+        temp_c = fgetc(ptr);
+        pushback(my_vector, temp_c);
+        arr[count] = temp_c;
+        count++;
         
     }
-    fclose(ptr);
-    printf("%d",temp_c);
+    //printf("%c", arr[6]);
+    printf("%c\n", my_vector->heap_array[1]);
+    printf("%s\n", my_vector->heap_array);
+    printf("%i\n", my_vector->size);
+    deconstruct(my_vector);//for some reason th
     printf("\n\n");
-
     return 0;
 }
