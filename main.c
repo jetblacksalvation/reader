@@ -20,7 +20,7 @@ int main(){
         exit(0);//close program because error
     }
     char arr[7];
-    int count;
+    int count = 0;
     while (!feof(ptr)) {
         temp_c = fgetc(ptr);
         pushback(my_vector, temp_c);
@@ -29,7 +29,9 @@ int main(){
         
     }
     //printf("%c", arr[6]);
-    printf("%c\n", my_vector->heap_array[1]);
+    my_vector->heap_array[count-1] = '\0';
+
+    printf("%c\n", my_vector->heap_array[my_vector->size]);
     printf("%s\n", my_vector->heap_array);
     printf("%i\n", my_vector->size);
     deconstruct(my_vector);//for some reason th
