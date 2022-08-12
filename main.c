@@ -13,7 +13,7 @@ int main(){
 
 	char arr[] = {"hell"};
 	//test shti
-	my_vector = construct(4, arr);
+	my_vector = construct(4, "hsfda");
 	pushback(my_vector, 'o');
 	printf("%c\n", my_vector->heap_array[3]);
 	printf("%c\n", my_vector->heap_array[4]);
