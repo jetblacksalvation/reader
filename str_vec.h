@@ -9,15 +9,20 @@ typedef struct vector {
 	size_t max_size;//allocated size to string, 
 } str_vector;//constructors
 
-str_vector* construct(int size, char* arr) {
+str_vector* construct(int size, char arr[]) {
 	str_vector* newthing = (str_vector*)malloc(1*sizeof(str_vector));//allocate the vector on the heap so that it is not terminated at end of function  
-	newthing->heap_array = (char*)malloc((size*2) * sizeof(char));//allocate more than necesary to avoid using resize 
+	if(size <=0){
+		newthing->heap_array = (char*)malloc((size*2) * sizeof(char));//allocate more than necesary to avoid using resize 
 	
-	for (int x = 0; x < size; x++) {
-		newthing->heap_array[x] = arr[x];
+		for (int x = 0; x < size; x++) {
+			newthing->heap_array[x] = arr[x];
+		}
+		newthing->heap_array[size] = 0;//setting terminating zero character
+		newthing->size = size;
+		return newthing;
 	}
-	newthing->heap_array[size] = 0;//setting terminating zero character
-	newthing->size = size;
+	newthing->heap_array = (char*)malloc((size+10)*sizeof(char));
+	newthing->heap_array[0] = '\0';//terminating thing 
 	return newthing;
 };
 void deconstruct(str_vector* vec) {
@@ -38,7 +43,7 @@ void str_pushbackk(str_vector* vec1 , str_vector* vec2){
 		for(int x =0; x< vec1->size + vec2->size; x++){
 			vec1->heap_array[vec1->size+x] = vec2->heap_array[x];
 		}
-		vec1->heap_array[vec1->size+vec2->size] = 0;//string turmination character
+		vec1->heap_array[vec1->size+vec2->size] = '\0';//string turmination character
 		
 	}
 

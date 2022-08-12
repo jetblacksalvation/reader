@@ -11,13 +11,13 @@ int main(){
 
     str_vector* my_vector;
 
+    
 	char arr[] = {"hell"};
 	//test shti
-	my_vector = construct(4, "hsfda");
-	pushback(my_vector, 'o');
-	printf("%c\n", my_vector->heap_array[3]);
-	printf("%c\n", my_vector->heap_array[4]);
-    printf("%s\n",my_vector->heap_array);
+	my_vector = construct(0, "fdas");
+    pushback(my_vector, 'd');
+	printf("%s", my_vector->heap_array);
+    
     deconstruct(my_vector);
 
     scanf("%i");//pauses program
@@ -25,7 +25,7 @@ int main(){
 
 
 
-    ptr = fopen("file.txt", "r");//second is mode 
+    ptr = fopen("file.txt", "r");//second is mode, r is reead 
     if (ptr == NULL){
         printf("error!");
         exit(0);//close program because error
